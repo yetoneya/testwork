@@ -11,12 +11,6 @@
             border: 2px solid #0b8eb4;
             padding: 5px;              
         }
-        .graphic {               
-            border-color: #dde2fa;
-            padding: 5px;
-            padding-right: 50px;
-        }
-
         tr{
             padding-bottom: 10px;
             padding-top: 10px;
@@ -25,18 +19,6 @@
             padding-right: 200px;
             padding-bottom: 20px;
             text-align: left;
-        }
-
-        #sq {
-            
-            width: 0px;
-            height: 20px;
-            background-color: #0b8eb4 ;
-            position: relative;
-            left: 0px;
-        }
-        #pq{
-            padding-right: 50px;
         }
     </style>
 
@@ -56,17 +38,7 @@
                 <td th:text="${item.key}">1</td>
                 <td th:text="${item.value}">1</td>
             </tr>
-
         </tbody>
     </table>
-    <br>
-    <br>
-    <table class="graphic">
-        <tr th:each="item : ${map}">
-            <td id="pq" th:text="${item.key}">1</td>
-            <td id="sq" th:style="'width:'+ ${item.value}+';'"></td>
-        </tr>
-    </table>
-    <div id="size"></div>
 </body>
 </html>
