@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>STEPS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body {
+                padding: 40px;
+                background: #dde2fa;
+            }
+            .forms {               
+                border: 2px solid #0b8eb4;
+                padding: 5px;              
+            }
+
+            tr{
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+            th{
+                padding-right: 300px;
+                padding-bottom: 20px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a th:href="@{/}" href="apage.html">Home</a> </h3>       
+        <h3>Steps:</h3>
+        <br>
+        <table class="forms">
+            <thead>
+                <tr class="tr">
+                    <th>type</th>
+                    <th>subtype</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${map}">
+                    <td th:text="${item.key}">1</td>
+                    <td th:text="${item.value}">1</td>
+                </tr>
+            </tbody>
+        </table>  
+    </body>
+</html>

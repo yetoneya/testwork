@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body {
+                padding: 40px;
+                background: #dde2fa;
+            }
+            .submit{
+                background: #dde2fa; 
+                text-align: center;
+                border: 2px solid #0b8eb4;
+                border-radius: 5px;              
+                width: 100px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="data-type" th:action="@{/find(data=${data})}" action="apage.html">   
+            <h3><input type="radio" name="data" value="forms" checked="checked"/>Forms</h3>
+            <h3><input type="radio" name="data" value ="steps"/>Steps</h3>
+            <h3><input type="radio" name="data" value ="top"/>Top</h3>
+            <br>
+            <h3><input type="submit" class="submit"  value="submit"/></h3>                          
+        </form>
+    </body>
+</html>

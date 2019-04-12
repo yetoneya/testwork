@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Error</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body {
+                padding: 40px;
+                background: #dde2fa;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a th:href="@{/}" href="apage.html">Home</a> </h3>
+        <br>
+        <p th:text="${exception}">error</p>
+    </body>
+</html>
