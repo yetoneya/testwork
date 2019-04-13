@@ -32,8 +32,8 @@ public class Main {
     @Autowired
     private UserService user;
     
-    @EventListener
-    public void init(ContextStartedEvent event)  MalformedURLException {
+    @PostConstruct
+    public void init()  MalformedURLException {
         final CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
         URL url = new URL(URL);
         userService.deleteAll();
