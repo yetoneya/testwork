@@ -30,25 +30,21 @@ public class Main {
     }
 
     @Autowired
-    private UserService userService;
-
-    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
-    @PostConstruct
-    public void init() throws MalformedURLException {
+    private UserService user;
+    
+    @EventListener
+    public void init(ContextStartedEvent event)  MalformedURLException {
         final CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
         URL url = new URL(URL);
         userService.deleteAll();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
                 CSVReader csvr = new CSVReaderBuilder(reader).withCSVParser(parser).withSkipLines(1).build();) {
-            CSVIterator iterator = (CSVIterator) csvr.iterator();
-            //int counter=0;
+            CSVIterator iterator = (CSVIterator) csvr.iterator();            
             while (iterator.hasNext()) {
                 User user = User.createNewUser(iterator.next());
                 if (user != null) {
                     userService.save(user);
                 }
-                //counter++;
-                // if(counter>5000)break;
             }
         } catch (IOException ioe) {
             ioe.printStackTrace();
