@@ -54,5 +54,4 @@ public class AControllerTest {
         this.mvc.perform(get("/top")).andExpect(status().isOk())
                 .andExpect(content().contentType(HTML_UTF_8));
     }
-
 }
